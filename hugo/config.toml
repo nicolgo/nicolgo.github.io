@@ -1,7 +1,7 @@
 baseURL = "https://nicolgo.github.io/"
 languageCode = "en"
 defaultContentLanguage = "en"
-title = "ZO ZO"                        # site title                     # 网站标题
+title = "nicolgo"                        # site title                     # 网站标题
 theme = "zozo"
 hasCJKLanguage = true                  # has chinese/japanese/korean ?  # 自动检测是否包含 中文\日文\韩文
 summaryLength = 100
@@ -15,7 +15,7 @@ pygmentCodeFences = true
 pygmentscodefencesguesssyntax = true
 
 [author]                               # essential                      # 必需
-  name = "VarKai"
+  name = "Nicolas Gong"
 
 [blackfriday]
   smartypants = false
@@ -42,10 +42,10 @@ pygmentscodefencesguesssyntax = true
   url = "/about/"
 
 [params]
-  subTitle = "the site subtitle"                                       # site's subTitle              # 网站二级标题
-  footerSlogan = "My spiritual home"                                   # site's footer slogan         # 网站页脚标语
-  keywords = ["Hugo","theme","zozo"]                                   # site's keywords              # 网站关键字
-  description = "Hugo theme zozo example site."                        # site's description           # 网站描述
+  subTitle = "Lifelong learning"                                       # site's subTitle              # 网站二级标题
+  footerSlogan = "Think big, Start small"                              # site's footer slogan         # 网站页脚标语
+  keywords = ["nicolgo","hugo","theme"]                                # site's keywords              # 网站关键字
+  description = "nicolgo's blog"                                       # site's description           # 网站描述
   enableMathJax = true                                                 # enable mathjax               # 是否使用mathjax（数学公式）
   enableSummary = true                                                 # display the article summary  # 是否显示文章摘要
   mainSections = ["posts","post"]
@@ -63,11 +63,11 @@ pygmentscodefencesguesssyntax = true
 # Your socail's url
 # 社交地址配置
 [social]
-  github = " "
-  twitter = " "
-  facebook = " "
-  weibo = " "
-  instagram = " "
+  github = "https://github.com/nicolgo"
+  twitter = "https://twitter.com/NicolasGong"
+  # facebook = " "
+  # weibo = " "
+  # instagram = " "
 
 [markup]
 [markup.goldmark]
