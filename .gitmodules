@@ -1,0 +1,3 @@
+[submodule "hugo/themes/zozo"]
+	path = hugo/themes/zozo
+	url = https://github.com/nicolgo/hugo-theme-zozo.git
