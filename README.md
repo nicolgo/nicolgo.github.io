@@ -20,10 +20,10 @@ services:
       - "1313:1313"
 ```
 Let me explain the details of the configurations:
-- image: The server create container based an image from a public repository in [Docker Hub](https://hub.docker.com/r/klakegg/hugo/), which is recommended by Hugo. As for the tags, you can use other as you like, but `-ext` is recommended since some theme may use additional tools.
-- command: The default entrypoint of the container is `hugo`, when we set `command: [option]`, it will run `hugo [option]` inside container. However, the `hugo server` command will fail with an error `hugo-server | Error: Unable to locate config file or config directory. Perhaps you need to create a new site.` when we build a website firstly since we have nothing in current workspace. To solve the problem, we can uncomment `command: new site /src -f yml` and comment `command: server`, which will create a create a new Hugo site in current workspace.
-- volumes: The key mounts the project directory(`./hugo`) on the host to the path('/src') inside the container. Using `./hugo` instead of current directory is because an error `hugo-server | Error: /src already exists and is not empty. See --force.` will occur if the initial directory is not empty. Another way to solve the problem is use `--force` flag.
-- ports: The key binds the container and the host machine to the same port `1313`.
+1. image: The server create container based an image from a public repository in [Docker Hub](https://hub.docker.com/r/klakegg/hugo/), which is recommended by Hugo. As for the tags, you can use other as you like, but `-ext` is recommended since some theme may use additional tools.
+2. command: The default entrypoint of the container is `hugo`, when we set `command: [option]`, it will run `hugo [option]` inside container. However, the `hugo server` command will fail with an error `hugo-server | Error: Unable to locate config file or config directory. Perhaps you need to create a new site.` when we build a website firstly since we have nothing in current workspace. To solve the problem, we can uncomment `command: new site /src -f yml` and comment `command: server`, which will create a create a new Hugo site in current workspace.
+3. volumes: The key mounts the project directory(`./hugo`) on the host to the path('/src') inside the container. Using `./hugo` instead of current directory is because an error `hugo-server | Error: /src already exists and is not empty. See --force.` will occur if the initial directory is not empty. Another way to solve the problem is use `--force` flag.
+4. ports: The key binds the container and the host machine to the same port `1313`.
 
 #### 1.1.2 How to do it
 1. creating a `docker-compose.yml` file with the configurations, and create a new empty `hugo` directory
