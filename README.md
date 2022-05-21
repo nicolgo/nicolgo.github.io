@@ -5,11 +5,25 @@ To create a Hugo site, the first thing you should install Hugo. To avoid install
 ### 1.1 Build container with Docker Compose(recommend)
 
 #### 1.1.1 How to do it
-1. creating a `docker-compose.yml` file with the configurations, and create a new empty `hugo` directory
-2. uncomment the line `command: new site /src` and comment the line `command: server` in the `docker-compose.yml` file
-3. run `docker-compose up`
-4. comment the line `command: new site /src` and uncomment the line `command: server` in the `docker-compose.yml` file
-5. run `docker-compose up` again, then you can see an empty site in `localhost:1313` address by browser
+1. creating a `docker-compose.yml` file with the configurations below, and create a new empty `hugo` directory
+```
+version: "3"
+services:
+  server:
+    image: klakegg/hugo:0.93.2-ext-ubuntu-onbuild
+    container_name: hugo-server
+    # uncomment this when first run
+    # command: new site /src
+    command: server
+    volumes: 
+      - "./hugo:/src"
+    ports: 
+      - "1313:1313"
+```
+3. uncomment the line `command: new site /src` and comment the line `command: server` in the `docker-compose.yml` file
+4. run `docker-compose up`
+5. comment the line `command: new site /src` and uncomment the line `command: server` in the `docker-compose.yml` file
+6. run `docker-compose up` again, then you can see an empty site in `localhost:1313` address by browser
 
 #### 1.1.2 How it works
 The configure file of `docker-compose.yml` as the below shown:
