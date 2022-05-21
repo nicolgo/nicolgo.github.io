@@ -3,8 +3,8 @@ services:
   server:
     image: klakegg/hugo:0.93.2-ext-ubuntu-onbuild
     container_name: hugo-server
-    # uncommnet this when first run
-    # command: new site /src -f yml
+    # uncomment this when first run
+    # command: new site /src
     command: server
     volumes: 
       - "./hugo:/src"
