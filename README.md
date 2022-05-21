@@ -162,7 +162,41 @@ jobs:
 4. In the repository profile, going Settings->Pages, change the source branch to `gh-pages`. Congratulation, your site created successfully!
 ### 2.3 How it works
 see [GitHub Action](https://docs.github.com/en/actions)
-## 3 Useful links
+## 3 Tips to Writing
+### 3.1 create a new blog page
+1. enter the docker container with: 
+```
+docker exec -it hugo-server /bin/bash
+```
+2. using `hugo` command to generate a content file base on templates in [`Archethypes`](https://gohugo.io/content-management/archetypes/) folder
+```
+hugo new posts/first-blog.md
+```
+or create a content by [`Leaf Bundle`](https://gohugo.io/content-management/page-bundles/) way:
+```
+hugo new posts/first-blog/index.md
+```
+
+### 3.2 structure your images
+There are two ways to group your images: [Static Files](https://gohugo.io/content-management/static-files/#readout) or [Page Bundles](https://gohugo.io/content-management/page-bundles/).
+
+#### 3.2.1 Static Files
+1. create a `static/` directory in site directory
+2. adding a file `static/image.png`, then include it in markdown file with `![Example image](/image.png)`
+#### 3.2.2 Page Bundles
+1. create a content with the command below, `index.md` is a must.
+```
+hugo new posts/first-blog/index.md
+```
+2. add an image to `posts/first-blog/image.png`
+The file structure will like this:
+- posts
+  - first-blog
+    - index.md
+    - image.png
+3. include the image in markdown file with `![Example image](./image.png)`
+
+## 4 Useful links
 [1] [docker for beginners](https://docker-curriculum.com/#docker-compose)
 
 [2] [Hugo Documentation](https://gohugo.io/documentation/)
@@ -176,4 +210,3 @@ see [GitHub Action](https://docs.github.com/en/actions)
 [6] [Hugo Docker Guide](http://i.lckiss.com/?p=7252)
 
  
-
