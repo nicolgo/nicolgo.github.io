@@ -12,9 +12,9 @@ A Software engineer.
 -------------
 ##### MSc in Information Technology, The Hong Kong Polytechnic University (09/2021-present)
 
-- Research on 3D object detection. 
-
 - Major in AI & Bigdata.
+
+- Research on 3D object detection. 
 
 ##### B.S. in Automation, North University of China** (09/2013-07/2017)
 
@@ -46,7 +46,7 @@ Mask Checks, Signal Layer Checks, Hammerhead Etch Compensation, and Smooth Corne
 
 #### Technical Skills
 --------------------
-**C, C++, C#, Python, Machine Learning** 
+**C, C++, C#, Python, Machine Learning, etc.** 
 
 #### Awards
 ----------
