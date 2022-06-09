@@ -1,0 +1,103 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Nicolas Gong"><title>MD DOC Template ｜ nicolgo</title><meta name=description content="Pandoc document template Description This repository contains a simple template for building Pandoc documents; Pandoc is a suite of tools to compile markdown files into readable files (PDF, EPUB, HTML&amp;hellip;).
+Usage Installing In order to use this makefile you will need to make sure that the following dependencies are installed on your system:
+GNU make Pandoc LuaLaTeX DejaVu Sans fonts Folder structure Here&amp;rsquo;s a folder structure for a Pandoc document:
+my-document/ # Root directory. |- build/ # Folder used to store builded (output) files. |- src/ # Markdowns files; one for each chapter. |- images/ # Images folder. |- metadata.yml # Metadata content (title, author."><meta name=keywords content="markdown"><link rel="shortcut icon" href=https://nicolgo.github.io/images/favicon.ico><link rel=stylesheet type=text/css media=screen href=https://nicolgo.github.io/css/normalize.css><link rel=stylesheet type=text/css media=screen href=https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css><link rel=stylesheet type=text/css media=screen href=https://nicolgo.github.io/css/zozo.css><link rel=stylesheet type=text/css media=screen href=https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css><link rel=stylesheet type=text/css media=screen href=https://nicolgo.github.io/css/highlight.css></head><body><div class="main animate__animated animate__fadeInDown"><div class="nav_container animated fadeInDown"><div class=site_nav id=site_nav><ul><li><a href=/>Home</a></li><li><a href=/posts/>Archive</a></li><li><a href=/tags/>Tags</a></li><li><a href=/about/>About</a></li></ul></div><div class=menu_icon><a id=menu_icon><i class=ri-menu-line></i></a></div></div><div class="header animated fadeInDown"><div class=site_title_container><div class=site_title><h1><a href=https://nicolgo.github.io/><span>nicolgo</span></a></h1></div><div class=description><p class=sub_title>Lifelong learning</p><div class=my_socials><a href=https://github.com/nicolgo title=github target=_blank><i class=ri-github-fill></i></a>
+<a href=https://twitter.com/NicolasGong title=twitter target=_blank><i class=ri-twitter-fill></i></a>
+<a href=https://nicolgo.github.io/index.xml type=application/rss+xml title=rss target=_blank><i class=ri-rss-fill></i></a></div></div></div></div><div class=content><div class=post_page><div class="post animate__animated animate__fadeInDown"><div class="post_title post_detail_title"><h2><a href=/posts/md-doc-template/>MD DOC Template</a></h2><span class=date>2022.06.06</span></div><div class="post_content markdown"><h1 id=pandoc-document-template>Pandoc document template</h1><h2 id=description>Description</h2><p>This repository contains a simple template for building
+<a href=http://pandoc.org/>Pandoc</a> documents; Pandoc is a suite of tools to compile
+markdown files into readable files (PDF, EPUB, HTML&mldr;).</p><h2 id=usage>Usage</h2><h3 id=installing>Installing</h3><p>In order to use this makefile you will need to make sure that the following
+dependencies are installed on your system:</p><ul><li>GNU make</li><li>Pandoc</li><li>LuaLaTeX</li><li>DejaVu Sans fonts</li></ul><h3 id=folder-structure>Folder structure</h3><p>Here&rsquo;s a folder structure for a Pandoc document:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>my-document/     # Root directory.
+</span></span><span class=line><span class=cl>|- build/        # Folder used to store builded (output) files.
+</span></span><span class=line><span class=cl>|- src/          # Markdowns files; one for each chapter.
+</span></span><span class=line><span class=cl>|- images/       # Images folder.
+</span></span><span class=line><span class=cl>|- metadata.yml  # Metadata content (title, author...).
+</span></span><span class=line><span class=cl>|- Makefile      # Makefile used for building our documents.
+</span></span></code></pre></div><h3 id=setup-generic-data>Setup generic data</h3><p>Edit the <em>metadata.yml</em> file to set configuration data:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nn>---</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>My document title</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>author</span><span class=p>:</span><span class=w> </span><span class=l>Ralph Huwiler</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>rights</span><span class=p>:</span><span class=w>  </span><span class=l>Creative Commons Attribution 4.0 International</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>language</span><span class=p>:</span><span class=w> </span><span class=l>en-US</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>tags</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>document, my-document, etc]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>abstract</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>  </span><span class=w>  </span><span class=l>Your summary text.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nn>---</span><span class=w>
+</span></span></span></code></pre></div><p>You can find the list of all available keys on <a href=http://pandoc.org/MANUAL.html#extension-yaml_metadata_block>this
+page</a>.</p><h3 id=creating-chapters>Creating chapters</h3><p>Creating a new chapter is as simple as creating a new markdown file in the
+<em>src/</em> folder; you&rsquo;ll end up with something like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>src/01-introduction.md
+</span></span><span class=line><span class=cl>src/02-installation.md
+</span></span><span class=line><span class=cl>src/03-usage.md
+</span></span><span class=line><span class=cl>src/04-references.md
+</span></span></code></pre></div><p>Pandoc and Make will join them automatically ordered by name; that&rsquo;s why the
+numeric prefixes are being used.</p><p>All you need to specify for each chapter at least one title:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl><span class=gh># Introduction
+</span></span></span><span class=line><span class=cl><span class=gh></span>
+</span></span><span class=line><span class=cl>This is the first paragraph of the introduction chapter.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=gu>## First
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>This is the first subsection.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=gu>## Second
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>This is the second subsection.
+</span></span></code></pre></div><p>Each title (<em>#</em>) will represent a chapter, while each subtitle (<em>##</em>) will
+represent a chapter&rsquo;s section. You can use as many levels of sections as
+markdown supports.</p><h4 id=links-between-chapters>Links between chapters</h4><p>Anchor links can be used to link chapters within the document:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>// src/01-introduction.md
+</span></span><span class=line><span class=cl><span class=gh># Introduction
+</span></span></span><span class=line><span class=cl><span class=gh></span>
+</span></span><span class=line><span class=cl>For more information, check the [Usage] chapter.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// src/02-installation.md
+</span></span><span class=line><span class=cl><span class=gh># Usage
+</span></span></span><span class=line><span class=cl><span class=gh></span>
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></div><p>If you want to rename the reference, use this syntax:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>For more information, check [<span class=nt>this</span>](<span class=na>#usage</span>) chapter.
+</span></span></code></pre></div><p>Anchor names should be downcased, and spaces, colons, semicolons&mldr; should be
+replaced with hyphens. Instead of <code>Chapter title: A new era</code>, you have:
+<code>#chapter-title-a-new-era</code>.</p><h4 id=links-between-sections>Links between sections</h4><p>It&rsquo;s the same as anchor links:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl><span class=gh># Introduction
+</span></span></span><span class=line><span class=cl><span class=gh></span>
+</span></span><span class=line><span class=cl><span class=gu>## First
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>For more information, check the [Second] section.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=gu>## Second
+</span></span></span><span class=line><span class=cl><span class=gu></span>
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></div><p>Or, with al alternative name:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>For more information, check [<span class=nt>this</span>](<span class=na>#second</span>) section.
+</span></span></code></pre></div><h3 id=inserting-objects>Inserting objects</h3><p>Text. That&rsquo;s cool. What about images and tables?</p><h4 id=insert-an-image>Insert an image</h4><p>Use Markdown syntax to insert an image with a caption:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>![<span class=nt>A cool seagull.</span>](<span class=na>images/seagull.png</span>)
+</span></span></code></pre></div><p>Pandoc will automatically convert the image into a figure (image + caption).</p><p>If you want to resize the image, you may use this syntax, available in Pandoc
+1.16:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>![<span class=nt>A cool seagull.</span>](<span class=na>images/seagull.png</span>){ width=50% height=50% }
+</span></span></code></pre></div><p>Also, to reference an image, use LaTeX labels:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>Please, admire the gloriousnes of Figure \ref{seagull_image}.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>![<span class=nt>A cool seagull.\label{seagull_image}</span>](<span class=na>images/seagull.png</span>)
+</span></span></code></pre></div><h4 id=insert-a-table>Insert a table</h4><p>Use markdown table, and use the <code>Table: &lt;Your table description></code> syntax to add
+a caption:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>| Index | Name |
+</span></span><span class=line><span class=cl>| ----- | ---- |
+</span></span><span class=line><span class=cl>| 0     | AAA  |
+</span></span><span class=line><span class=cl>| 1     | BBB  |
+</span></span><span class=line><span class=cl>| ...   | ...  |
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Table: This is an example table.
+</span></span></code></pre></div><p>If you want to reference a table, use LaTeX labels:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>Please, check Table /ref{example_table}.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>| Index | Name |
+</span></span><span class=line><span class=cl>| ----- | ---- |
+</span></span><span class=line><span class=cl>| 0     | AAA  |
+</span></span><span class=line><span class=cl>| 1     | BBB  |
+</span></span><span class=line><span class=cl>| ...   | ...  |
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Table: This is an example table.\label{example_table}
+</span></span></code></pre></div><h4 id=insert-an-equation>Insert an equation</h4><p>Wrap a LaTeX math equation between <code>$</code> delimiters for inline (tiny) formulas:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>This, $\mu = \sum_{i=0}^{N} \frac{x_i}{N}$, the mean equation, ...
+</span></span></code></pre></div><p>Pandoc will transform them automatically into images using online services.</p><p>If you want to center the equation instead of inlining it, use double <code>$$</code>
+delimiters:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>$$\mu = \sum_{i=0}^{N} \frac{x_i}{N}$$
+</span></span></code></pre></div><p><a href=https://www.codecogs.com/latex/eqneditor.php>Here</a>&rsquo;s an online equation
+editor.</p><h3 id=output>Output</h3><p>This template uses <em>Makefile</em> to automatize the building process. Instead of
+using the <em>pandoc cli util</em>, we&rsquo;re going to use some <em>make</em> commands.</p><h4 id=export-to-pdf>Export to PDF</h4><p>Use this command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>make pdf
+</span></span></code></pre></div><p>The generated file will be placed in <em>build/pdf</em>.</p><p>Please, note that PDF file generation requires some extra dependencies (~ 800
+MB):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-latex-extra 
+</span></span></code></pre></div><h4 id=export-to-epub>Export to EPUB</h4><p>Use this command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>make epub
+</span></span></code></pre></div><p>The generated file will be placed in <em>build/epub</em>.</p><h4 id=export-to-html>Export to HTML</h4><p>Use this command:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>make html
+</span></span></code></pre></div><p>The generated file(s) will be placed in <em>build/html</em>.</p><h2 id=references>References</h2><ul><li><a href=https://github.com/rhwilr/markdown-documentation-template.git>markdown-documentation-template</a></li><li><a href=http://pandoc.org/>Pandoc</a></li><li><a href=http://pandoc.org/MANUAL.html>Pandoc Manual</a></li><li><a href=http://wikipedia.org/wiki/Markdown>Wikipedia: Markdown</a></li></ul></div><div class=post_footer><div class=meta><div class=info><span class="field tags"><i class=ri-stack-line></i>
+<a href=https://nicolgo.github.io/tags/markdown/>markdown</a></span></div></div></div></div><div class=doc_comments></div></div></div></div><a id=back_to_top href=# class=back_to_top><i class=ri-arrow-up-s-line></i></a><footer class=footer><div class=footer_slogan><span>Think big, Start small</span></div></footer><script src=https://nicolgo.github.io/js/jquery-3.5.1.min.js></script>
+<link href=https://nicolgo.github.io/css/fancybox.min.css rel=stylesheet><script src=https://nicolgo.github.io/js/fancybox.min.js></script>
+<script src=https://nicolgo.github.io/js/zozo.js></script>
+<script type=text/javascript async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['[[',']]']],processEscapes:!0,processEnvironments:!0,skipTags:['script','noscript','style','textarea','pre'],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var e,t=MathJax.Hub.getAllJax();for(e=0;e<t.length;e+=1)t[e].SourceElement().parentNode.className+=' has-jax'})</script><style>code.has-jax{font:inherit;font-size:100%;background:inherit;border:inherit;color:#515151}</style></body></html>
