@@ -9,7 +9,7 @@ description: ""
 slug: ""
 ---
 
-# Pandoc document template
+# Markdown document template
 
 ## Description
 
